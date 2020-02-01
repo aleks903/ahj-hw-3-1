@@ -8,7 +8,7 @@
   height: 400px;
   margin-left: auto;
   margin-right: auto;
-  cursor:url(/img/molot.png) 24 24,default;
+  cursor:url('../img/molot.png'),default;
 }
 
 .field {
