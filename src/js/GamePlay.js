@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 export default class GamePlay {
   constructor(gamePad) {
     this.numberHits = 0;
@@ -7,14 +8,14 @@ export default class GamePlay {
     this.oldIndex = 0;
     this.itemIndex = 0;
     this.numberHitsView = document.getElementById('points');
-    this.interval;
+    this.interval = 0;
   }
 
   init() {
-    console.log(this.gamePad.boardSize);
-    this.gamePad.board.addEventListener('click', (event) => {this.handleBoardClick(event)});
+    this.gamePad.board.addEventListener('click', (event) => { this.handleBoardClick(event); });
     this.randomImg();
   }
+
   handleBoardClick(event) {
     if (event.target.id !== 'goblin') {
       return;
@@ -35,7 +36,7 @@ export default class GamePlay {
   }
 
   randomImg() {
-    this.interval = setInterval(() => {this.changePosition()}, 1000);
+    this.interval = setInterval(() => { this.changePosition(); }, 1000);
   }
 
   changePosition() {
@@ -55,6 +56,4 @@ export default class GamePlay {
       alert('Игра окончена');
     }
   }
-
-
 }
